@@ -17,6 +17,12 @@ export default function App() {
           <p> by Adeola (Chizoba) Adeyemi, 2017, Nigeria </p>
 
         </div>
+          <div className="post"> 
+          <img src="" alt="" /> 
+          <h2> DANESSA MYRICKS BEAUTY </h2>
+          <p>  </p>
+
+        </div>
     
     
     </main>
