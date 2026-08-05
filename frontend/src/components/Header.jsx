@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Header() {
     return (
        
@@ -5,8 +7,8 @@ export default function Header() {
 
         <a href="" className="logo">  ☆ HOT GIRL ARCHIVE ☆ </a>
         <nav>
-          <a href=""> LOGIN </a>
-          <a href=""> REGISTER </a>
+          <Link to="/login"> LOGIN </Link>
+          <Link to="/register"> REGISTER </Link>
 
         </nav>
       </header>
