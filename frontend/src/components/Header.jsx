@@ -8,7 +8,8 @@ export default function Header() {
         <Link to="/" className="logo">  ☆ HOT GIRL ARCHIVE ☆ </Link>
         <nav>
           <Link to="/login"> LOGIN </Link>
-          <Link to="/register"> REGISTER </Link>
+          <Link to="/register"> REGISTER </Link> 
+          <Link to='/brands'> ARCHIVE </Link>
 
         </nav>
       </header>
