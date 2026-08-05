@@ -1,6 +1,12 @@
+import Header from "./Header"; 
+
 export default function Layout() {
-    return {
-        
-    }
+    return (
+        <main> 
+            <Header /> 
+            {/* <Outlet />  */}
+
+        </main>
+    )
 
 }

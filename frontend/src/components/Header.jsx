@@ -5,7 +5,7 @@ export default function Header() {
        
          <header className="header">
 
-        <a href="" className="logo">  ☆ HOT GIRL ARCHIVE ☆ </a>
+        <Link to="/" className="logo">  ☆ HOT GIRL ARCHIVE ☆ </Link>
         <nav>
           <Link to="/login"> LOGIN </Link>
           <Link to="/register"> REGISTER </Link>
