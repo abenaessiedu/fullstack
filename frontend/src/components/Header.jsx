@@ -1,15 +1,15 @@
 export default function Header() {
     return (
-        <header className="header">
-        <h1>
-        ☆ HOT GIRL ARCHIVE ☆
-        </h1>
-        <h2>
-            a global directory of Black Owned Businesses 
+       
+         <header className="header">
 
-        </h2>
+        <a href="" className="logo">  ☆ HOT GIRL ARCHIVE ☆ </a>
+        <nav>
+          <a href=""> LOGIN </a>
+          <a href=""> REGISTER </a>
 
-    </header>
+        </nav>
+      </header>
 
     ); 
 }
