@@ -1,7 +1,7 @@
 import React from "react";
 import BrandCard from "./components/BrandCard"
 import Header from "./components/Header";
-import {Routes} from "react-router-dom"; 
+import {Routes, Route} from "react-router-dom"; 
 
 
 export default function App() {
@@ -10,10 +10,14 @@ export default function App() {
       <Route index element={   
         <main>
      <Header /> 
-      <Post /> 
-      <Post /> 
-      <Post /> 
+      <BrandCard /> 
+      <BrandCard /> 
+      <BrandCard /> 
+     
     </main>
+  } /> 
+  <Route path={'/login'} element={
+    <div> LOGIN </div>
   } /> 
     </Routes>
   
