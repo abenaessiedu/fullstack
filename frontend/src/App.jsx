@@ -1,10 +1,11 @@
 import React from "react";
-import BrandCard from "./components/BrandCard"
-import Header from "./components/Header";
+// import BrandCard from "./components/BrandCard"
+// import Header from "./components/Header";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout"
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
        
        <Route index element={<Home /> } />
       <Route path="/login" element={<Login />} /> 
+      <Route path="/register" element={<Register />} />
       </Route>
     </Routes>
 

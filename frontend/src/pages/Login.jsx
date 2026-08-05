@@ -1,5 +1,10 @@
 export default function Login() {
-    return(
-        <div> LOGIN PAGE</div>
+    return (
+        <form action="">
+            <input type="text" placeholder="username" />
+            <input type="password" placeholder="password" />
+            <button> LOGIN </button>
+        </form>
+
     )
 }
