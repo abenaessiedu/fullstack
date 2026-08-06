@@ -9,7 +9,7 @@ const port = 5173;
 app.use(cors()); 
 app.use(express.json()); 
 
-
+//password has been completely changed 
 mongoose.connect({}); 
 
 app.post('/register', (req, res) => {
