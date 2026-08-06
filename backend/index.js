@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json()); 
 
 
-await mongoose.connect('mongodb+srv://aessiedu98_db_user:1klnXdwRKEImGLow@cluster0.yljr0li.mongodb.net/?appName=Cluster0'); 
+mongoose.connect({}); 
 
 app.post('/register', (req, res) => {
     const {firstname, lastname, username, password} = req.body; 
