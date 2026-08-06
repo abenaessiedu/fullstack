@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import "dotenv/config"; 
 import User from './models/User.js'
 import bcrypt from "bcryptjs"; 
+import jwt from 'jsonwebtoken'; 
 
 
 const app = express(); 
@@ -12,8 +13,10 @@ const app = express();
 const port = 7777; 
 
 
-const salt = 'sdfihbasdoibasidba'; 
 
+
+const salt = bcrypt.genSaltSync(10);
+const secret = 'ashakjsnfskjbsfkj'
 
 app.use(cors()); 
 app.use(express.json()); 
@@ -28,6 +31,8 @@ app.post('/register', async (req, res) => {
     const userDoc = await User.create({
         username, 
         password: bcrypt.hashSync(password, salt), }); 
+
+
     res.json(userDoc); 
     } catch(e){
         res.status(400).json(e); 
@@ -35,4 +40,21 @@ app.post('/register', async (req, res) => {
     }
 }); 
 
+
+
+app.post('/login', async (req, res) => {
+    const {username, password} = req.body; 
+    const userDoc = await User.findOne({username})
+    const passOk = bcrypt.compareSync(password, userDoc.password); // true
+    if (passOk) {
+        //then the user is logged in 
+        jwt.sign({username, id:userDoc._id, secret})
+        //res.json()
+
+    } else {
+        res.status(400).json('wrong credentials')
+    
+    }
+
+})
 app.listen(7777); 
