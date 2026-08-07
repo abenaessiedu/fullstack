@@ -6,7 +6,7 @@ import "dotenv/config";
 import User from './models/User.js'
 import bcrypt from "bcryptjs"; 
 import jwt from 'jsonwebtoken'; 
-
+import cookieParser from 'cookie-parser'; 
 
 const app = express(); 
 
@@ -18,9 +18,14 @@ const port = 7777;
 const salt = bcrypt.genSaltSync(10);
 const secret = 'ashakjsnfskjbsfkj'
 
-app.use(cors({credentials: true, origin: 'http://localhost:7777'})); 
+//middlewareville 
+app.use(cors({
+    origin: 'http://localhost:5173', 
+    credentials: true, 
+    
+})); 
 app.use(express.json()); 
-
+app.use(cookieParser()); 
 
 //password has been completely changed 
 // mongoose.connect('MONGO_URI'); 
@@ -61,4 +66,18 @@ app.post('/login', async (req, res) => {
 
 
 })
+
+app.get('/profile', (req, res) => {
+    const {token} = req.cookies; 
+    jwt.verify(token, secret, {}, (err, info ) => {
+        if (err) throw err; 
+        res.json(info); 
+    })
+
+})
+
+
+
+
+
 app.listen(7777); 
