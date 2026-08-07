@@ -5,8 +5,7 @@ import mongoose from 'mongoose';
 import "dotenv/config"; 
 import User from './models/User.js'
 import bcrypt from "bcryptjs"; 
-import brandsRouter from "./routes/Brands.js"
-
+import brandsRouter from "./routes/Brands.js"; 
 
 const app = express(); 
 
@@ -39,7 +38,7 @@ app.post('/register', async (req, res) => {
     }
 }); 
 
-app.use('/brands', brandRouter); 
+app.use('/brands', brandsRouter); 
 
 app.listen(7777); 
 

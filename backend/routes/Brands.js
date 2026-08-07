@@ -3,10 +3,10 @@ import {createBrands, getBrands, getAllBrands ,updateBrands, deleteBrands,} from
 
 const router = Router();
 
-router.post('/', createBrand);
-router.get('/:id', getBrand);
-router.get('/:id', getAllBrand); 
-router.put('/:id', updatebrand);
-router.delete('/:id', deleteBrand);
+router.post('/', createBrands);
+router.get('/:id', getBrands);
+router.get('/', getAllBrands); 
+router.put('/:id', updateBrands);
+router.delete('/:id', deleteBrands);
 
 export default router;
