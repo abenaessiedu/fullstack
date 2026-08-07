@@ -18,7 +18,7 @@ const port = 7777;
 const salt = bcrypt.genSaltSync(10);
 const secret = 'ashakjsnfskjbsfkj'
 
-app.use(cors()); 
+app.use(cors({credentials: true, origin: 'http://localhost:7777'})); 
 app.use(express.json()); 
 
 
@@ -48,13 +48,17 @@ app.post('/login', async (req, res) => {
     const passOk = bcrypt.compareSync(password, userDoc.password); // true
     if (passOk) {
         //then the user is logged in 
-        jwt.sign({username, id:userDoc._id, secret})
+        jwt.sign({username, id:userDoc._id}, secret, { }, (err, token) => {
+            if (err) throw err; 
+            res.cookie('token', token).json('ok'); 
+        })
         //res.json()
 
     } else {
         res.status(400).json('wrong credentials')
     
-    }
+    } 
+
 
 })
 app.listen(7777); 
