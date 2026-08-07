@@ -1,8 +1,8 @@
 import { useState } from "react"
 
 export default function Register() {
-    // const [firstname, setFirstName] = useState(' '); 
-    // const [lastname, setLastName] = useState(' '); 
+    const [firstname, setFirstName] = useState(' '); 
+    const [lastname, setLastName] = useState(' '); 
     const [username, setUsername] = useState(' ');
     const [password, setPassword] = useState(' ');
 
@@ -11,7 +11,7 @@ export default function Register() {
 
         const response = await fetch('http://localhost:7777/register', {
             method: 'POST',
-            body: JSON.stringify({ username, password }),
+            body: JSON.stringify({ firstname, lastname, username, password }),
             headers: { 'Content-Type': 'application/json' },
         }); 
         if (response.status === 200) {
@@ -31,17 +31,17 @@ export default function Register() {
             <h1> REGISTRATION </h1>
             <p> Register with FELINE ARCHIVE to save your favorite stores. </p>
             {/* FIRST NAME */}
-            {/* <input 
+            <input 
                 type="text" 
                 placeholder="first name" 
                 value={firstname}
-                onChange={ev => setFirstName(ev.target.value) } /> */}
+                onChange={ev => setFirstName(ev.target.value) } />
             {/*LAST NAME */}
-            {/* <input 
+            <input 
                 type="text" 
                 placeholder="last name" 
                 value={lastname} 
-                onChange={ev => setLastName(ev.target.value)}/> */}
+                onChange={ev => setLastName(ev.target.value)}/>
             {/*USERNAME */}
             <input type="text"
                 placeholder="username"
