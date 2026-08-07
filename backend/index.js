@@ -40,9 +40,16 @@ app.post('/register', async (req, res) => {
 
 app.use('/brands', brandsRouter); 
 
+
+
+
+
 app.listen(7777); 
 
 await connectDB(); 
+
+
+
 // await Brand.deleteMany().maxTimeMS(30000)
 // console.log('deleted')
 // await Brand.insertMany(data)

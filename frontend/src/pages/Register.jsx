@@ -1,12 +1,12 @@
 import { useState } from "react"
 
 export default function Register() {
-    const [firstname, setFirstName] = useState(' '); 
-    const [lastname, setLastName] = useState(' '); 
+    const [firstname, setFirstName] = useState(' ');
+    const [lastname, setLastName] = useState(' ');
     const [username, setUsername] = useState(' ');
     const [password, setPassword] = useState(' ');
 
-    async function register(ev) {
+        async function register(ev) {
         ev.preventDefault();
 
         const response = await fetch('http://localhost:7777/register', {
@@ -24,6 +24,19 @@ export default function Register() {
 
 
     }
+    // async function register(ev) {
+    //     try {
+    //         const response = await fetch(`http://localhost:7777/register`);
+    //         const data = await response.json();
+    //         console.log(data);
+    //         return setBrands(data);
+    //     } catch (e) {
+    //         console.log(e);
+    //     }
+    // }
+    // useEffect(() => {
+    //     getBrands();
+    // }, []);
 
     return (
 
@@ -31,17 +44,17 @@ export default function Register() {
             <h1> REGISTRATION </h1>
             <p> Register with FELINE ARCHIVE to save your favorite stores. </p>
             {/* FIRST NAME */}
-            <input 
-                type="text" 
-                placeholder="first name" 
+            <input
+                type="text"
+                placeholder="first name"
                 value={firstname}
-                onChange={ev => setFirstName(ev.target.value) } />
+                onChange={ev => setFirstName(ev.target.value)} />
             {/*LAST NAME */}
-            <input 
-                type="text" 
-                placeholder="last name" 
-                value={lastname} 
-                onChange={ev => setLastName(ev.target.value)}/>
+            <input
+                type="text"
+                placeholder="last name"
+                value={lastname}
+                onChange={ev => setLastName(ev.target.value)} />
             {/*USERNAME */}
             <input type="text"
                 placeholder="username"

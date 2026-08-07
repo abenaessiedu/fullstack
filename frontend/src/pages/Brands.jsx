@@ -1,7 +1,7 @@
 import BrandCard from "../components/BrandCard"; 
 import { useState, useEffect} from "react"; 
 
-export default function Brands() {
+export default function Brands({data}) {
     const [brands, setBrands] = useState([]);
    async function getBrands() {
     try {
@@ -19,21 +19,17 @@ export default function Brands() {
 
     return (
         //i should just put examples of black owned brands--BRASS TAX 
-       <div className="BrandCard">
-                <div className="image">
-                    <img src="/BEAUTYBYAD.png" alt="BEAUTYBYAD logo" />
-                </div>
-
-                <div className="texts">
-                    <h2> BEAUTY BY AD. </h2>
-                    <p className="info">
-                        <a className="author"> Adeola Adeyemi </a>
-                        <time> 2026-08-05 9:23 </time>
-                    </p>
-
-                    <p className="summary"> by Adeola (Chizoba) Adeyemi, 2017, Nigeria </p>
-                </div>
-
-            </div>
+   <div className="BrandList">
+      {brands.map((brand) => (
+        <BrandCard
+          key={brand._id}
+          _id={brand._id}
+          author={brand.author}
+          name={brand.name}
+          image={brand.image}
+          summary={brand.summary}
+        />
+      ))}
+    </div>
     )
 }

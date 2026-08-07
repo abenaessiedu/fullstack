@@ -1,16 +1,36 @@
-# React + Vite
+# **FELINE ARCHIVE: An Afropolitan Fashion Directory**
+ This is a full-stack blog application that allows users to find and save Black-Owned businesses globally, and shop directly with them. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+ ---
+ ## **📌 Table of Contents**
+ - [Features](#-features)
+- [Tech Stack](#-tech-stack)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## **✨ Features**
+| Feature | Description |
+|---------|-------------|
+| **Login** | Allows users to log into their accounts with the FELINE ARCHIVE, where they would be able to save their favorite brands and add brands to both the directory and their personal collection. |
+| **Register** | Allows users to create accounts with the FELINE ARCHIVE, where they are able to register and recieve updates on new additions to the directory.  |
+| **ARCHIVE** | Displays the entire collection of Black Owned Brands, listing the name of the Brand, the Owner of the Brand and the Brand's country of origin.  | 
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## **🛠️ Tech Stack**
+### **Frontend**
+- **React.js** (v18+) – UI framework
+- **React Router** – Client-side routing
 
-## Expanding the Oxlint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### **Backend**
+- **Node.js** (v20+) – JavaScript runtime
+- **Express.js** – Web framework
+- **MongoDB** – Database storage 
+- **JWT** – Authentication
+- **Bcrypt** – Password hashing
+- **CORS** – Cross-origin resource sharing
+- **EJS** – Rendering dynamic HTML pages
+
+
+### **Tools & DevOps**
+- **Git & GitHub** – Version control
