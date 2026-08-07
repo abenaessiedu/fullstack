@@ -1,19 +1,22 @@
-export default function BrandCard() {
+import { Link } from "react-router-dom"; 
+
+export default function BrandCard({_id, author, } ) {
     return (
         
             <div className="BrandCard">
                 <div className="image">
-                    <img src="/BEAUTYBYAD.png" alt="BEAUTYBYAD logo" />
+                     <Link to={`/brands/${_id}`}>
+                    <img src={" "} alt="" />
+                    </Link>
                 </div>
 
                 <div className="texts">
-                    <h2> BEAUTY BY AD. </h2>
-                    <p className="info">
-                        <a className="author"> Adeola Adeyemi </a>
-                        <time> 2026-08-05 9:23 </time>
-                    </p>
+                   
+                    <h2> {} </h2>
+                    <Link /> 
+                    <p className="info">  </p>
 
-                    <p className="summary"> by Adeola (Chizoba) Adeyemi, 2017, Nigeria </p>
+                    <p className="summary">  </p>
                 </div>
 
             </div>

@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import "dotenv/config"; 
 import User from './models/User.js'
 import bcrypt from "bcryptjs"; 
+import brandsRouter from "./routes/Brands.js"
 
 
 const app = express(); 
@@ -18,9 +19,12 @@ const salt = 'sdfihbasdoibasidba';
 app.use(cors()); 
 app.use(express.json()); 
 
+import Brand from './models/Brands.js';
+import {data} from './models/starterdata.js'
 
-//password has been completely changed 
-// mongoose.connect('MONGO_URI'); 
+
+import connectDB from './db.js';
+
 
 app.post('/register', async (req, res) => {
     const {username, password} = req.body; 
@@ -35,4 +39,11 @@ app.post('/register', async (req, res) => {
     }
 }); 
 
+app.use('/brands', brandRouter); 
+
 app.listen(7777); 
+
+await connectDB(); 
+// await Brand.deleteMany().maxTimeMS(30000)
+// console.log('deleted')
+// await Brand.insertMany(data)
