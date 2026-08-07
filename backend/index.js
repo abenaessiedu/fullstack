@@ -28,15 +28,15 @@ app.use(express.json());
 app.use(cookieParser()); 
 
 //password has been completely changed 
-// mongoose.connect('MONGO_URI'); 
+// mongoose.connect('MONGO_URL'); 
 
 app.post('/register', async (req, res) => {
     const {username, password} = req.body; 
     try {
     const userDoc = await User.create({
         username, 
-        password: bcrypt.hashSync(password, salt), }); 
-
+        password: bcrypt.hashSync(password, salt), 
+    }); 
 
     res.json(userDoc); 
     } catch(e){
@@ -76,7 +76,9 @@ app.get('/profile', (req, res) => {
 
 })
 
-
+app.post('/logout', (req, res) => {
+    res.cookie('token', ' ').json('ok'); 
+})
 
 
 
