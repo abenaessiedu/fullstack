@@ -12,17 +12,18 @@ import { UserContextProvider } from "./UserContext";
 function App() {
   return (
     <UserContextProvider> 
-      
+
        <Routes>
       <Route path="/" element={<Layout />}> 
        
        <Route index element={<Home />} />
       <Route path="/login" element={<Login />} /> 
       <Route path="/register" element={<Register />} />
+      <Route path="/create" element={<CreateBrand />} /> 
       </Route>
     </Routes> 
 
-    </UserContextProvider>
+    // </UserContextProvider>
    
 
   );
